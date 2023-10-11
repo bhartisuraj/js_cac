@@ -1,32 +1,98 @@
-// console.log(2 > 1); // Is 2 greater than 1 Output True
-// console.log(2 >= 1); // Is 2 greater or equal to 1 Output True
-// console.log(2 < 1); // Is 2 smaller than 1 Output is False
-// console.log(2 == 1); // Is 2 equal to 1 Output is False
-// console.log(2 != 1); // Is 2 is not equal to 1 Output is True.
+/* How data is kept in memory and how it is accessed on that basis we have 2 type of data-types.
 
-// When we do comparision between two different datatypes then problem arises
+    a.Primitive data-types (Call by value) Stack Memory - String, Number, Boolean, null, undefined, Symbol, BigInt.(What-ever changes you do, You do in its copy).
+    
+    b.Non-Primitive data types (Reference type) Heap Memory - Array, Objects, Functions.(What-ever changes you do, You do in its original value).
+*/
 
-// console.log("2" > 1 ); // JavaScript automatically change 2 to number and compare.
-// console.log(1 > "2" ); // False because we are comparing number with string.
-// console.log("02" > 1 ); // JavaScript automatically change 2 to number and compare.
-// console.log(1 > "02" ); // False because we are comparing number with string.
+// Javascript is Dynamically typed language because we don't have to specify variables datatype (int, string, boolean etc).
 
-// Note:- The reason is that an equality check == and comparisions > < >= <= work differently.
-// Comparisions convert null to a number, treating it as 0. Thats why(3) null >= 0 is true and null > 0 is false.
+const score = "100";
+// console.log(typeof score); // string
 
-// console.log(null > 0 );
-// console.log(null < 0 );
-// console.log(null == 0 );
-// console.log(null >= 0 );
-// console.log(null <= 0 );
+// const number:scoreResult = 100; Typescript
+const scoreResult = 100;
+// console.log(typeof scoreResult); // number
 
-console.log(undefined > 0 );
-console.log(undefined < 0 );
-console.log(undefined == 0 );
-console.log(undefined >= 0 );
-console.log(undefined <= 0 );
+const isLoggedIn = false;
+// console.log(typeof isLoggedIn); // boolean
 
-// == vs === :- === means not just check values also check datatype, whereas == check only values.
+const outsideTemp = null;
+// console.log(typeof outsideTemp); // null/object
 
-// console.log("2" == 2);//true Because it compares 2 and 2.
-// console.log("2" === 2);//false Because it compares both value and its datatype.
+let userEmail;
+// console.log(userEmail); // Undefined
+// console.log(typeof userEmail); // Undefined
+
+const id = Symbol("123");
+const anotherId = Symbol("123");
+
+// console.log(typeof id); // symbol
+// console.log(id === anotherId); // false
+
+const bigNumber = 3456543576654356754n; // bigInt
+// console.log(typeof bigNumber);
+
+const heroes = ["shaktiman", "naagraj", "doga"];
+// console.log(typeof heroes); // object
+
+let myObj = {
+  //key: value pair
+  name: "suraj",
+  age: 30,
+};
+
+// console.log(typeof myObj); // object
+
+const myFunction = function () {
+  // console.log("Hello World");
+};
+
+// console.log(typeof myFunction); // function
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Stack (Primitive), Heap (Non-Primitive)
+
+let myName = "surajbharti.com";
+let anotherName = myName;
+anotherName = "suraj";
+console.log(myName);
+console.log(anotherName);
+
+let userOne = {
+  email: "user@google.com",
+  upi: "user@ybl",
+};
+
+let userTwo = userOne;
+userTwo.email = "suraj@google.com";
+
+console.log(userOne.email);
+console.log(userTwo.email);
+
+// console.log(1111111111111111111);
+// console.log(BigInt(1111111111111111111));
+
+let userNumber = 10;
+let userName = "Hello";
+let userLogged = true;
+let userAreaTemp = null;
+let userDefined;
+
+// console.log(typeof userNumber);
+// console.log(typeof userName);
+// console.log(typeof userLogged);
+// console.log(typeof userAreaTemp);
+// console.log(typeof userDefined);
+// console.log(typeof myObj);
+// console.log(typeof myFunction);
+
+/*Note:- 
+typeof number is number;
+typeof text is string;
+typeof true/false is boolean;
+typeof null is object;
+typeof undefined is undefined;
+typeof object is object;
+typeof function is function;*/
